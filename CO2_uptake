@@ -1,0 +1,17 @@
+## installing packages
+install.packages("tidyverse")
+install.packages("ggplot2")
+
+## loading libraries
+library(tidyverse)
+library(ggplot2)
+
+## loading dataset
+data("CO2")
+plants <- CO2
+glimpse(plants)
+
+## data analysis and visualization
+plants %>% group_by(Type,Treatment) %>% drop_na() %>% summarise(avg_uptake=mean(uptake))
+ggplot(plants, aes(x =Type , y = uptake, fill = Treatment)) +geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "CO2 uptake for different plant types",x = "Type",y = "uptake") +theme_minimal()
