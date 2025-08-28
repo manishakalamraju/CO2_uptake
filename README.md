@@ -23,7 +23,8 @@ glimpse(plants)
 ### Data analysis
 We can find the average CO2_uptake for each plant type under different treatments by using summarize() and group_by() functions.
 ```{r analysis,echo=TRUE}
-plants %>% group_by(Type,Treatment) %>% drop_na() %>% summarise(avg_uptake=mean(uptake))
+co2_uptake <- plants %>% group_by(Type,Treatment) %>% drop_na() %>% summarise(avg_uptake=mean(uptake))
+co2_uptake
 ```
 The output will be displayed in the console as
 Type        Treatment  avg_uptake
@@ -35,8 +36,12 @@ Type        Treatment  avg_uptake
 ## Data visualization
 The visualization can also be done in R using ggplot by giving aesthetics and bar graph type using geom_bar() function. The position="dodge" arranges the bars for each group side-by-side within each category.
 ```{r analysis,echo=TRUE}
-ggplot(plants, aes(x =Type , y = uptake, fill = Treatment)) +geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "CO2 uptake for different plant types",x = "Type",y = "uptake") +theme_minimal()
+ggplot(co2_uptake, aes(x =Type , y = avg_uptake, fill = Treatment)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Average CO2 uptake for different plant types",
+       x = "Type",
+       y = "avg_uptake") +
+  theme_minimal()
 ```
+<img width="513" height="273" alt="image" src="https://github.com/user-attachments/assets/f87e674e-6155-4c0b-9637-ca105a72dcd9" />
 
-<img width="513" height="273" alt="image" src="https://github.com/user-attachments/assets/6e33fa44-ef0e-4628-bf36-c92c3c87f3aa" />
