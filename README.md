@@ -38,5 +38,5 @@ The visualization can also be done in R using ggplot by giving aesthetics and ba
 ggplot(plants, aes(x =Type , y = uptake, fill = Treatment)) +geom_bar(stat = "identity", position = "dodge") +
   labs(title = "CO2 uptake for different plant types",x = "Type",y = "uptake") +theme_minimal()
 ```
-The output will be displayed in the plots as follows
+
 <img width="513" height="273" alt="image" src="https://github.com/user-attachments/assets/6e33fa44-ef0e-4628-bf36-c92c3c87f3aa" />
