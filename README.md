@@ -1,5 +1,5 @@
 ## CO2_uptake_R code
-It contains dataset regarding CO2 uptake of two types of grassplants Qubec and Missisipi under different treatments like chilled and non-chilled. The dataset is present in the 'datasets' package of R.
+It contains dataset regarding CO2 uptake of two types of grassplants Quebec and Mississippi under different treatments like chilled and non-chilled. The dataset is present in the 'datasets' package of R.
 ### package installation
 ```{r installing packages,echo=TRUE}
 install.packages("tidyverse")
